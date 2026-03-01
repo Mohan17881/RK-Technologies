@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsApp Ecommerce</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>RK TECHNOLOGIES</h1>
+
+  <div class="container">
+
+    <!-- Product 1 -->
+    <div class="card">
+      <img src="https://www.neptuneindia.com/wp-content/uploads/5.png" alt="Product 1">
+      <h3>APFC</h3>
+      
+      <button class="btn"
+        onclick="orderWhatsapp('APFC Panel', '200000', 'https://via.placeholder.com/400x300')">
+        Order on WhatsApp
+      </button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="card">
+      <img src="https://5.imimg.com/data5/SELLER/Default/2024/2/388405445/OE/QS/PL/68888082/pcc-control-panel-500x500.png" alt="Product 2">
+      <h3>PCC</h3>
+      <button class="btn"
+        onclick="orderWhatsapp('PCC panel', '79999', 'https://via.placeholder.com/400x300')">
+        Order on WhatsApp
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    function orderWhatsapp(name, price, imageUrl) {
+      const phone = "8885211286"; // <-- Replace with your WhatsApp number
+
+      const message = `Hello! I want to order the following product:
+📦 *Product:* ${name}
+💰 *Price:* ₹${price}
+🖼 Image: ${imageUrl}
+
+Please confirm availability.`;
+
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
